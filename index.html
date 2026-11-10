@@ -10,9 +10,12 @@
 <meta property="og:image" content="assets/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Switzer';src:url('assets/fonts/switzer-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Switzer';src:url('assets/fonts/switzer-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Switzer';src:url('assets/fonts/switzer-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Switzer';src:url('assets/fonts/switzer-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
 :root{
   --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
   --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
@@ -23,7 +26,7 @@
   --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-24:6rem;
   --navy:#045781; --deep:#033f5e; --blue:#065A82; --ink:#0d2a3a; --gold:#94672f; --champ:#e3b886;
   --bg:#eef3f6; --surface:#f7f9fa; --line:#cfdde5; --muted:#4f6573;
-  --font-display:'Zodiak','Noto Serif TC',Georgia,serif;
+  --font-display:'Switzer','Noto Serif TC',system-ui,sans-serif;
   --font-body:'Switzer','Noto Sans TC',system-ui,sans-serif;
   --wrap:min(1120px,100% - 2*var(--space-6));
 }
@@ -46,10 +49,13 @@ header.solid{background:rgba(4,87,129,.94);backdrop-filter:blur(12px);box-shadow
 .brand{opacity:0;pointer-events:none;transition:opacity .3s}
 header.solid .brand{opacity:1;pointer-events:auto}
 .brand span{letter-spacing:.14em}
-.lockup{display:inline-block;margin-bottom:var(--space-10);color:var(--champ);filter:drop-shadow(0 2px 14px rgba(3,40,60,.5))}
+.lockup{display:inline-grid;grid-template-columns:auto auto;column-gap:clamp(.6rem,1.4vw,1.25rem);align-items:end;margin-bottom:var(--space-10);color:var(--champ);filter:drop-shadow(0 2px 14px rgba(3,40,60,.5))}
 .hero-mark{display:block;width:clamp(220px,32vw,440px);height:auto}
-.lockup .en{display:block;font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1rem,.8rem + 1vw,1.55rem);letter-spacing:.16em;margin-top:.1em;padding-left:.05em}
-.lockup .co{display:block;font-family:'Noto Sans TC',sans-serif;font-size:clamp(.95rem,.75rem + .9vw,1.4rem);letter-spacing:.32em;margin-top:.35em;padding-left:.05em}
+@media (max-width:480px){.hero-mark{width:196px}}
+.lockup .en{grid-column:1;grid-row:2;display:flex;justify-content:space-between;font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1rem,.8rem + 1vw,1.55rem);line-height:1;margin-top:.55em;padding-inline:.15em .1em}
+.lockup .en i{font-style:normal}
+.lockup .en .sp{width:.25em}
+.lockup .co{grid-column:2;grid-row:1;align-self:end;font-family:'Noto Sans TC',sans-serif;font-size:clamp(.72rem,.55rem + .7vw,1.15rem);letter-spacing:.22em;line-height:1;white-space:nowrap;padding-bottom:.35em}
 .contact-mark{width:clamp(160px,18vw,220px);height:auto;margin-bottom:var(--space-8)}
 header.solid .brand{color:var(--champ)}
 nav{display:flex;align-items:center;gap:var(--space-6)}
@@ -68,7 +74,7 @@ header.solid .lang{border-color:var(--champ);color:var(--champ)}
 .hero .wrap{position:relative;z-index:1;padding-block:var(--space-24) var(--space-16)}
 .eyebrow{font-size:var(--text-xs);letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(4,26,40,.6)}
 .hero h1,.hero p{text-shadow:0 2px 24px rgba(4,26,40,.35)}
-.hero h1{font-family:var(--font-display);font-weight:400;font-size:var(--text-hero);line-height:1.02;margin-block:var(--space-4) var(--space-6);max-width:14ch}
+.hero h1{font-family:var(--font-display);font-weight:300;letter-spacing:-.02em;font-size:var(--text-hero);line-height:1.02;margin-block:var(--space-4) var(--space-6);max-width:14ch}
 html[lang="zh-Hant"] .hero h1{line-height:1.2;max-width:12ch}
 .hero p{max-width:52ch;color:rgba(255,255,255,.88)}
 .cta{display:inline-block;margin-top:var(--space-8);font-size:var(--text-sm);font-weight:500;text-decoration:none;color:var(--ink);background:#fff;padding:.85rem 1.6rem;border-radius:999px;transition:background .3s,color .3s}
@@ -77,7 +83,7 @@ html[lang="zh-Hant"] .hero h1{line-height:1.2;max-width:12ch}
 /* sections */
 section{padding-block:clamp(var(--space-12),8vw,var(--space-24))}
 .label{font-size:var(--text-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
-h2{font-family:var(--font-display);font-weight:400;font-size:var(--text-xl);line-height:1.2;color:var(--navy);margin-top:var(--space-3)}
+h2{font-family:var(--font-display);font-weight:300;letter-spacing:-.01em;font-size:var(--text-xl);line-height:1.2;color:var(--navy);margin-top:var(--space-3)}
 .story{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(var(--space-8),6vw,var(--space-24));align-items:start}
 .story .lead{font-family:var(--font-display);font-size:var(--text-lg);line-height:1.5;color:var(--navy)}
 html[lang="zh-Hant"] .story .lead{font-family:'Noto Serif TC',serif}
@@ -158,7 +164,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <section class="hero" aria-label="Introduction">
   <img src="assets/hero.webp" alt="Rain falling from a bright sky into a calm deep-blue sea" fetchpriority="high">
   <div class="wrap">
-    <div class="lockup"><img class="hero-mark" src="assets/mark-gold.png" alt="蔚霖深海"><span class="en">Aetherain Marine</span><span class="co">開發股份有限公司</span></div>
+    <div class="lockup"><img class="hero-mark" src="assets/mark-gold.png" alt="蔚霖深海"><span class="co">開發股份有限公司</span><span class="en" aria-label="Aetherain Marine"><i>A</i><i>e</i><i>t</i><i>h</i><i>e</i><i>r</i><i>a</i><i>i</i><i>n</i><i class="sp"></i><i>M</i><i>a</i><i>r</i><i>i</i><i>n</i><i>e</i></span></div>
     <div class="eyebrow"><span data-en>Taiwan · Marine engineering & yacht partnerships</span><span data-zh>台灣・海洋工程與遊艇合作</span></div>
     <h1><span data-en>From the sky, into the sea.</span><span data-zh>從天而降，流入大海</span></h1>
     <p><span data-en>Aetherain Marine builds the waterfront that yachts come home to, and brings carefully chosen European marine brands to owners in Taiwan.</span><span data-zh>蔚霖深海打造讓遊艇安心停靠的水岸，並把精挑細選的歐洲海洋品牌，帶給台灣的船主。</span></p>
