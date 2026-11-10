@@ -21,8 +21,8 @@
   --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
   --text-hero:clamp(2.75rem,1rem + 5.5vw,6rem);
   --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-24:6rem;
-  --navy:#054462; --blue:#065A82; --ink:#0d2230; --gold:#b8924a;
-  --bg:#f6f4ef; --surface:#fbfaf7; --line:#ddd8cf; --muted:#5e6b73;
+  --navy:#045781; --deep:#033f5e; --blue:#065A82; --ink:#0d2a3a; --gold:#94672f; --champ:#e3b886;
+  --bg:#eef3f6; --surface:#f7f9fa; --line:#cfdde5; --muted:#4f6573;
   --font-display:'Zodiak','Noto Serif TC',Georgia,serif;
   --font-body:'Switzer','Noto Sans TC',system-ui,sans-serif;
   --wrap:min(1120px,100% - 2*var(--space-6));
@@ -40,31 +40,31 @@ html[lang="zh-Hant"] [data-zh]{display:revert}
 
 /* header */
 header{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
-header.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+header.solid{background:rgba(4,87,129,.94);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(227,184,134,.25)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-size:var(--text-sm);color:#fff;text-decoration:none;letter-spacing:.06em;transition:color .3s}
-.brand .mk{height:34px;width:auto}
-.brand .mk-n{display:none}
-header.solid .brand .mk-w{display:none}
-header.solid .brand .mk-n{display:block}
-.brand span{padding-left:var(--space-3);border-left:1px solid currentColor;line-height:1.1;opacity:.9}
-@media (max-width:420px){.brand span{display:none}}
-.hero-mark{width:clamp(220px,32vw,440px);height:auto;margin-bottom:var(--space-8);filter:drop-shadow(0 2px 18px rgba(4,26,40,.45))}
+.brand{opacity:0;pointer-events:none;transition:opacity .3s}
+header.solid .brand{opacity:1;pointer-events:auto}
+.brand span{letter-spacing:.14em}
+.lockup{display:inline-block;margin-bottom:var(--space-10);color:var(--champ);filter:drop-shadow(0 2px 14px rgba(3,40,60,.5))}
+.hero-mark{display:block;width:clamp(220px,32vw,440px);height:auto}
+.lockup .en{display:block;font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1rem,.8rem + 1vw,1.55rem);letter-spacing:.16em;margin-top:.1em;padding-left:.05em}
+.lockup .co{display:block;font-family:'Noto Sans TC',sans-serif;font-size:clamp(.95rem,.75rem + .9vw,1.4rem);letter-spacing:.32em;margin-top:.35em;padding-left:.05em}
 .contact-mark{width:clamp(160px,18vw,220px);height:auto;margin-bottom:var(--space-8)}
-header.solid .brand{color:var(--navy)}
+header.solid .brand{color:var(--champ)}
 nav{display:flex;align-items:center;gap:var(--space-6)}
 nav a{font-size:var(--text-sm);text-decoration:none;color:rgba(255,255,255,.88);transition:color .3s}
-header.solid nav a{color:var(--ink)}
+header.solid nav a{color:#fff}
 nav a:hover{color:var(--gold)}
 .lang{font:500 var(--text-xs) var(--font-body);letter-spacing:.08em;border:1px solid rgba(255,255,255,.6);color:#fff;background:transparent;border-radius:999px;padding:.35rem .9rem;cursor:pointer;transition:all .3s}
-header.solid .lang{border-color:var(--navy);color:var(--navy)}
+header.solid .lang{border-color:var(--champ);color:var(--champ)}
 .lang:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 @media (max-width:720px){nav a{display:none}}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,30,45,.45) 0%,rgba(5,30,45,.05) 35%,rgba(5,30,45,.25) 60%,rgba(4,26,40,.85) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,87,129,.55) 0%,rgba(4,87,129,.18) 35%,rgba(4,87,129,.35) 60%,rgba(3,63,94,.92) 100%),rgba(4,87,129,.18)}
 .hero .wrap{position:relative;z-index:1;padding-block:var(--space-24) var(--space-16)}
 .eyebrow{font-size:var(--text-xs);letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(4,26,40,.6)}
 .hero h1,.hero p{text-shadow:0 2px 24px rgba(4,26,40,.35)}
@@ -84,7 +84,11 @@ html[lang="zh-Hant"] .story .lead{font-family:'Noto Serif TC',serif}
 .story p+p{margin-top:var(--space-4)}
 .story .body{color:#2f3b42}
 
-.services{background:var(--surface);border-block:1px solid var(--line)}
+.services{background:var(--navy);color:#e8f0f4}
+.services h2,.services .svc h3{color:#fff}
+.services .label,.services .num{color:var(--champ)}
+.services .svc-head p,.services .svc p{color:#c9dbe5}
+.services .svc,.services .svc article{border-color:rgba(227,184,134,.28)}
 .svc-head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-8);flex-wrap:wrap}
 .svc-head p{max-width:44ch;color:var(--muted)}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--space-12);border-top:1px solid var(--line)}
@@ -101,7 +105,8 @@ html[lang="zh-Hant"] .story .lead{font-family:'Noto Serif TC',serif}
 .feature li{padding-block:var(--space-3);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.5rem 1fr;gap:var(--space-2)}
 .feature li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:.7em}
 
-.founder{background:var(--navy);color:#eef3f5}
+.founder{background:var(--deep);color:#eef3f5}
+.founder .label{color:var(--champ)}
 .founder h2{color:#fff}
 .founder .grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(var(--space-8),6vw,var(--space-24))}
 .founder .name{font-family:var(--font-display);font-size:var(--text-xl);margin-top:var(--space-6);color:#fff}
@@ -121,7 +126,7 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3) var(--space-6)
 dt{color:var(--muted)}
 dd{color:var(--ink)}
 
-footer{border-top:1px solid var(--line);padding-block:var(--space-8);font-size:var(--text-xs);color:var(--muted)}
+footer{background:var(--navy);padding-block:var(--space-8);font-size:var(--text-xs);color:var(--champ)}
 footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
 
 @media (max-width:520px){.mail{font-size:var(--text-lg)}}
@@ -138,7 +143,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <body>
 <header id="top">
   <div class="wrap bar">
-    <a class="brand" href="#" aria-label="蔚霖深海 Aetherain Marine"><img class="mk mk-w" src="assets/mark-white.png" alt="蔚霖深海"><img class="mk mk-n" src="assets/mark-navy.png" alt=""><span>Aetherain Marine</span></a>
+    <a class="brand" href="#" aria-label="蔚霖深海 Aetherain Marine"><span>Aetherain Marine</span></a>
     <nav aria-label="Main">
       <a href="#about"><span data-en>About</span><span data-zh>關於我們</span></a>
       <a href="#services"><span data-en>What we do</span><span data-zh>業務</span></a>
@@ -153,7 +158,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <section class="hero" aria-label="Introduction">
   <img src="assets/hero.webp" alt="Rain falling from a bright sky into a calm deep-blue sea" fetchpriority="high">
   <div class="wrap">
-    <img class="hero-mark" src="assets/mark-gold.png" alt="蔚霖深海 calligraphy">
+    <div class="lockup"><img class="hero-mark" src="assets/mark-gold.png" alt="蔚霖深海"><span class="en">Aetherain Marine</span><span class="co">開發股份有限公司</span></div>
     <div class="eyebrow"><span data-en>Taiwan · Marine engineering & yacht partnerships</span><span data-zh>台灣・海洋工程與遊艇合作</span></div>
     <h1><span data-en>From the sky, into the sea.</span><span data-zh>從天而降，流入大海</span></h1>
     <p><span data-en>Aetherain Marine builds the waterfront that yachts come home to, and brings carefully chosen European marine brands to owners in Taiwan.</span><span data-zh>蔚霖深海打造讓遊艇安心停靠的水岸，並把精挑細選的歐洲海洋品牌，帶給台灣的船主。</span></p>
