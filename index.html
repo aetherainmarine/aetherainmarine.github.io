@@ -120,6 +120,10 @@ html[lang="zh-Hant"] .story .lead{font-family:'Noto Serif TC',serif}
 .founder .role{color:#e6cf9f;font-size:var(--text-sm);margin-top:var(--space-2)}
 .founder blockquote{margin-top:var(--space-8);font-family:var(--font-display);font-size:var(--text-lg);line-height:1.5;color:#d9e4ea;border-left:2px solid var(--gold);padding-left:var(--space-6)}
 html[lang="zh-Hant"] .founder blockquote{font-family:'Noto Serif TC',serif}
+.yrs{align-self:center;justify-self:start;display:flex;align-items:baseline;gap:var(--space-4);border-left:1px solid rgba(227,184,134,.35);padding-left:clamp(var(--space-6),4vw,var(--space-16))}
+.yrs .big{font-family:var(--font-display);font-weight:300;font-size:clamp(4.5rem,3rem + 6vw,8.5rem);line-height:1;color:var(--champ)}
+.yrs .txt{font-size:var(--text-lg);color:#fff;max-width:14ch;line-height:1.35}
+@media (max-width:860px){.yrs{border-left:0;padding-left:0;border-top:1px solid rgba(227,184,134,.35);padding-top:var(--space-8)}}
 .cv{list-style:none}
 .cv li{padding-block:var(--space-4);border-bottom:1px solid rgba(255,255,255,.14);font-size:var(--text-sm);line-height:1.7}
 .cv li b{display:block;font-weight:500;color:#fff;font-size:var(--text-base)}
@@ -239,14 +243,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
       <div class="role"><span data-en>Founder & CEO</span><span data-zh>創辦人暨執行長</span></div>
       <blockquote><span data-en>“I only recommend what I would use on my own boat, and on my own skin.”</span><span data-zh>「我只推薦我自己願意用在船上、也願意用在自己身上的東西。」</span></blockquote>
     </div>
-    <ul class="cv reveal">
-      <li><b><span data-en>12 years in Taiwan’s yacht industry</span><span data-zh>台灣遊艇產業12年</span></b><span><span data-en>Yacht sales, owner services, events and brand marketing.</span><span data-zh>遊艇銷售、船主服務、活動與品牌行銷。</span></span></li>
-      <li><b><span data-en>Private yacht management, since 2021</span><span data-zh>私人遊艇管理，2021年起</span></b><span><span data-en>Hands-on care of owners’ yachts, crews and berths.</span><span data-zh>親自照顧船主的遊艇、船員與泊位。</span></span></li>
-      <li><b><span data-en>Marina operations & construction supervision</span><span data-zh>碼頭營運與工程監造</span></b><span><span data-en>Marina manager and site supervisor in Penghu; project manager for a yacht-harbour ROT tender; deputy director of the 2017 Penghu Yacht Show.</span><span data-zh>曾任澎湖碼頭經理及監工、澎湖遊艇區ROT投標專案經理、2017澎湖遊艇展副總監。</span></span></li>
-      <li><b><span data-en>Brand marketing & operations, 2024–2026</span><span data-zh>品牌行銷與營運，2024–2026</span></b><span><span data-en>Vice President, Brand Marketing, PR & Operations at a Taiwan yacht company.</span><span data-zh>曾任台灣遊艇公司品牌行銷公關暨營運副總。</span></span></li>
-      <li><b><span data-en>Standing Supervisor</span><span data-zh>常務監事</span></b><span>Yacht Service Business Associations of Taiwan</span></li>
-      <li><b><span data-en>Founder of an ocean-friendly herbal soap brand</span><span data-zh>海洋友善草本手工皂品牌創辦人</span></b><span><span data-en>Handmade soaps from more than ten plants, created for sensitive skin.</span><span data-zh>以十多種植物手作，為敏感肌而生。</span></span></li>
-    </ul>
+    <div class="yrs reveal">
+      <div class="big">12</div>
+      <div class="txt"><span data-en>years in Taiwan’s yacht industry</span><span data-zh>年遊艇產業經驗</span></div>
+    </div>
   </div>
 </section>
 
