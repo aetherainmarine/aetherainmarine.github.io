@@ -42,8 +42,15 @@ html[lang="zh-Hant"] [data-zh]{display:revert}
 header{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
 header.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
-.brand{font-family:var(--font-display);font-size:var(--text-lg);color:#fff;text-decoration:none;letter-spacing:.01em;transition:color .3s}
-.brand small{font-family:'Noto Serif TC',serif;font-size:var(--text-xs);margin-left:var(--space-2);opacity:.85;letter-spacing:.2em}
+.brand{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-size:var(--text-sm);color:#fff;text-decoration:none;letter-spacing:.06em;transition:color .3s}
+.brand .mk{height:34px;width:auto}
+.brand .mk-n{display:none}
+header.solid .brand .mk-w{display:none}
+header.solid .brand .mk-n{display:block}
+.brand span{padding-left:var(--space-3);border-left:1px solid currentColor;line-height:1.1;opacity:.9}
+@media (max-width:420px){.brand span{display:none}}
+.hero-mark{width:clamp(220px,32vw,440px);height:auto;margin-bottom:var(--space-8);filter:drop-shadow(0 2px 18px rgba(4,26,40,.45))}
+.contact-mark{width:clamp(160px,18vw,220px);height:auto;margin-bottom:var(--space-8)}
 header.solid .brand{color:var(--navy)}
 nav{display:flex;align-items:center;gap:var(--space-6)}
 nav a{font-size:var(--text-sm);text-decoration:none;color:rgba(255,255,255,.88);transition:color .3s}
@@ -56,7 +63,7 @@ header.solid .lang{border-color:var(--navy);color:var(--navy)}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,30,45,.45) 0%,rgba(5,30,45,.05) 35%,rgba(5,30,45,.25) 60%,rgba(4,26,40,.85) 100%)}
 .hero .wrap{position:relative;z-index:1;padding-block:var(--space-24) var(--space-16)}
 .eyebrow{font-size:var(--text-xs);letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(4,26,40,.6)}
@@ -131,7 +138,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <body>
 <header id="top">
   <div class="wrap bar">
-    <a class="brand" href="#">Aetherain Marine<small>蔚霖深海</small></a>
+    <a class="brand" href="#" aria-label="蔚霖深海 Aetherain Marine"><img class="mk mk-w" src="assets/mark-white.png" alt="蔚霖深海"><img class="mk mk-n" src="assets/mark-navy.png" alt=""><span>Aetherain Marine</span></a>
     <nav aria-label="Main">
       <a href="#about"><span data-en>About</span><span data-zh>關於我們</span></a>
       <a href="#services"><span data-en>What we do</span><span data-zh>業務</span></a>
@@ -146,6 +153,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <section class="hero" aria-label="Introduction">
   <img src="assets/hero.webp" alt="Rain falling from a bright sky into a calm deep-blue sea" fetchpriority="high">
   <div class="wrap">
+    <img class="hero-mark" src="assets/mark-gold.png" alt="蔚霖深海 calligraphy">
     <div class="eyebrow"><span data-en>Taiwan · Marine engineering & yacht partnerships</span><span data-zh>台灣・海洋工程與遊艇合作</span></div>
     <h1><span data-en>From the sky, into the sea.</span><span data-zh>從天而降，流入大海</span></h1>
     <p><span data-en>Aetherain Marine builds the waterfront that yachts come home to, and brings carefully chosen European marine brands to owners in Taiwan.</span><span data-zh>蔚霖深海打造讓遊艇安心停靠的水岸，並把精挑細選的歐洲海洋品牌，帶給台灣的船主。</span></p>
@@ -216,7 +224,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
     <div class="reveal">
       <div class="label"><span data-en>Founder</span><span data-zh>創辦人</span></div>
       <div class="name">Angela Fu <span style="font-family:'Noto Serif TC',serif;font-size:.7em">傅姵俙</span></div>
-      <div class="role"><span data-en>Founder & Managing Director</span><span data-zh>創辦人暨負責人</span></div>
+      <div class="role"><span data-en>Founder & CEO</span><span data-zh>創辦人暨執行長</span></div>
       <blockquote><span data-en>“I only recommend what I would use on my own boat, and on my own skin.”</span><span data-zh>「我只推薦我自己願意用在船上、也願意用在自己身上的東西。」</span></blockquote>
     </div>
     <ul class="cv reveal">
@@ -233,6 +241,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <section class="contact" id="contact">
   <div class="wrap grid">
     <div class="reveal">
+      <img class="contact-mark" src="assets/mark-navy.png" alt="蔚霖深海" loading="lazy">
       <div class="label"><span data-en>Contact</span><span data-zh>聯絡我們</span></div>
       <h2><span data-en>Let’s talk about the sea.</span><span data-zh>一起聊聊大海吧</span></h2>
       <a class="mail" href="mailto:angela@aetherainmarine.com">angela@aetherainmarine.com</a>
@@ -252,7 +261,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
 <footer>
   <div class="wrap">
     <span>© 2026 Aetherain Marine Co., Ltd.</span>
-    <span>Taichung · Taiwan</span>
+    <span><span data-en>Calligraphy of 蔚霖深海, written for the company by a family elder</span><span data-zh>「蔚霖深海」由長輩親筆題字</span> · Taichung, Taiwan</span>
   </div>
 </footer>
 
