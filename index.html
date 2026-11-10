@@ -120,7 +120,10 @@ html[lang="zh-Hant"] .story .lead{font-family:'Noto Serif TC',serif}
 .founder .role{color:#e6cf9f;font-size:var(--text-sm);margin-top:var(--space-2)}
 .founder blockquote{margin-top:var(--space-8);font-family:var(--font-display);font-size:var(--text-lg);line-height:1.5;color:#d9e4ea;border-left:2px solid var(--gold);padding-left:var(--space-6)}
 html[lang="zh-Hant"] .founder blockquote{font-family:'Noto Serif TC',serif}
-.yrs{align-self:center;justify-self:start;display:flex;align-items:baseline;gap:var(--space-4);border-left:1px solid rgba(227,184,134,.35);padding-left:clamp(var(--space-6),4vw,var(--space-16))}
+.yrs{align-self:center;justify-self:start;border-left:1px solid rgba(227,184,134,.35);padding-left:clamp(var(--space-6),4vw,var(--space-16))}
+.yrs .row{display:flex;align-items:baseline;gap:var(--space-4)}
+.yrs .also{margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,.14);color:#c9dbe5;font-size:var(--text-base);max-width:32ch;text-wrap:balance}
+html[lang="zh-Hant"] .yrs .also{max-width:none}
 .yrs .big{font-family:var(--font-display);font-weight:300;font-size:clamp(4.5rem,3rem + 6vw,8.5rem);line-height:1;color:var(--champ)}
 .yrs .txt{font-size:var(--text-lg);color:#fff;max-width:14ch;line-height:1.35}
 @media (max-width:860px){.yrs{border-left:0;padding-left:0;border-top:1px solid rgba(227,184,134,.35);padding-top:var(--space-8)}}
@@ -244,8 +247,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-4);flex-
       <blockquote><span data-en>“I only recommend what I would use on my own boat, and on my own skin.”</span><span data-zh>「我只推薦我自己願意用在船上、也願意用在自己身上的東西。」</span></blockquote>
     </div>
     <div class="yrs reveal">
-      <div class="big">12</div>
-      <div class="txt"><span data-en>years in Taiwan’s yacht industry</span><span data-zh>年遊艇產業經驗</span></div>
+      <div class="row"><div class="big">12</div>
+      <div class="txt"><span data-en>years in Taiwan’s yacht industry</span><span data-zh>年遊艇產業經驗</span></div></div>
+      <div class="also"><span data-en>Also founder of an ocean-friendly natural herbal soap brand.</span><span data-zh>同時創立海洋友善的天然草本手工皂品牌。</span></div>
     </div>
   </div>
 </section>
